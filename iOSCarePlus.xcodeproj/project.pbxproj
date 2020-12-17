@@ -19,7 +19,6 @@
 		06F38000258A2B1E00E8F999 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 06F37FFF258A2B1E00E8F999 /* Alamofire */; };
 		06F38003258A2E9C00E8F999 /* NewGameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F38002258A2E9C00E8F999 /* NewGameResponse.swift */; };
 		06F38007258A341800E8F999 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 06F38006258A341800E8F999 /* Kingfisher */; };
-		06F3800A258A38AE00E8F999 /* GamePriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F38009258A38AE00E8F999 /* GamePriceResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		06F37FF8258A239400E8F999 /* GameItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemModel.swift; sourceTree = "<group>"; };
 		06F37FFB258A247600E8F999 /* GameItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemTableViewCell.swift; sourceTree = "<group>"; };
 		06F38002258A2E9C00E8F999 /* NewGameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameResponse.swift; sourceTree = "<group>"; };
-		06F38009258A38AE00E8F999 /* GamePriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePriceResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 				06F37FFB258A247600E8F999 /* GameItemTableViewCell.swift */,
 				06F37FF8258A239400E8F999 /* GameItemModel.swift */,
 				06F38002258A2E9C00E8F999 /* NewGameResponse.swift */,
-				06F38009258A38AE00E8F999 /* GamePriceResponse.swift */,
 			);
 			path = iOSCarePlus;
 			sourceTree = "<group>";
@@ -192,7 +189,6 @@
 				06D33B11257E050C0093FDED /* ViewController.swift in Sources */,
 				06D33B0D257E050C0093FDED /* AppDelegate.swift in Sources */,
 				06D33B0F257E050C0093FDED /* SceneDelegate.swift in Sources */,
-				06F3800A258A38AE00E8F999 /* GamePriceResponse.swift in Sources */,
 				06F37FF9258A239400E8F999 /* GameItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

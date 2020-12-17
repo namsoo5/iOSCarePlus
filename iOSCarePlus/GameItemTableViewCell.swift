@@ -45,19 +45,4 @@ class GameItemTableViewCell: UITableViewCell {
             gameCurrentPriceLabel.isHidden = true
         }
     }
-    
-    /*
-    private func  gamePriceAPICall(id: Int) {
-        // "?country=KR&ids=\(id)&lang=ko"
-        AF.request(getGamePriceURL,
-                   method: .get,
-                   parameters: ["country": "KR", "id": "\(id)", "lang": "ko"])
-            .response { response in
-                guard let data = response.data else { return }
-                
-                let decoder: JSONDecoder = JSONDecoder()
-//                self?.model = try? decoder.decode(.self, from: data)
-            }
-    }
- */
 }
