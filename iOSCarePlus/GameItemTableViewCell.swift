@@ -14,6 +14,7 @@ class GameItemTableViewCell: UITableViewCell {
     @IBOutlet private weak var gameOriginPriceLabel: UILabel!
     @IBOutlet private weak var gameTitleLabel: UILabel!
     @IBOutlet private weak var gameImageView: UIImageView!
+    
     private var model: GameItemModel? {
         didSet {
             setUIFromModel()
