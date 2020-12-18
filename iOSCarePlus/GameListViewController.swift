@@ -44,12 +44,14 @@ extension GameListViewController: UITableViewDataSource {
         guard let content = model?.contents[indexPath.row] else { return .init() }
         let cell: GameItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: "GameItemTableViewCell",
                                                                         for: indexPath) as! GameItemTableViewCell
-        
+        var screenshotURLs: [String] = []
+        content.screenshots.forEach { $0.images.forEach { screenshotURLs.append($0.url) } }
         // 서버 변경시 다 변경해야하는 불편함 -> 최소한의 코드만 변경하기위해서 모델을 새로 정의하여 랩핑하는 방식을 사용
         let model: GameItemModel = GameItemModel(gameTitle: content.formalName,
                                                  gameOriginPrice: 1_000,
                                                  gameDiscountPrice: nil,
-                                                 imageURL: content.heroBannerURL)
+                                                 imageURL: content.heroBannerURL,
+                                                 screenshot: screenshotURLs)
         cell.setModel(model)
         return cell
     }
