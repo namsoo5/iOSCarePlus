@@ -24,10 +24,9 @@ class GameListViewController: UIViewController {
 //    private var isEnd: Bool {
 //        model?.contents.count == model?.total
 //    }
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         newGameListAPICall()
     }
     
@@ -60,6 +59,8 @@ extension GameListViewController: UITableViewDataSource {
         if isEnd {
             return (model?.contents.count ?? 0)
         } else {
+            guard model != nil else { return 0 } // 통신 전에 셀이 1개 그려지는 현상 방지
+            
             return (model?.contents.count ?? 0) + 1
         }
     }
