@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/*
 class GameItemCodeTableViewCell: UITableViewCell {
     var gameImageView: UIImageView
     var titleLabel: UILabel
@@ -47,4 +47,4 @@ class GameItemCodeTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
+*/

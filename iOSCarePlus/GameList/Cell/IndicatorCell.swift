@@ -8,7 +8,7 @@
 import UIKit
 
 class IndicatorCell: UITableViewCell {
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
     
     func animationIndicatorView() {
         indicatorView.startAnimating()
