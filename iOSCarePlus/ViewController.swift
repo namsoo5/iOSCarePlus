@@ -24,8 +24,11 @@ class ViewController: UIViewController {
         animationSettingDefault()
         appearLogoViewAnimation { [weak self] in
             self?.slideBackgroundImageAnimation()
-            self?.blinkLogoAnimation()
         }
+    }
+    
+    @IBAction private func logoTapAction(_ sender: UITapGestureRecognizer) {
+        blinkLogoAnimation()
     }
     
     private func animationSettingDefault() {
@@ -56,7 +59,7 @@ class ViewController: UIViewController {
     }
     
     private func blinkLogoAnimation() {
-        UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse]) { [weak self] in
+        UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse]) { [weak self] in
             self?.logoView.alpha = 0
         }
     }
