@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069E3E3A25A5D5E30088D690 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069E3E3925A5D5E30088D690 /* Navigation.storyboard */; };
+		069E3E3D25A5DF940088D690 /* SeletableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069E3E3C25A5DF940088D690 /* SeletableButton.swift */; };
+		069E3E4025A5DFFD0088D690 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069E3E3F25A5DFFD0088D690 /* Colors.xcassets */; };
 		06B7632125935D270002B624 /* GameItemCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7632025935D270002B624 /* GameItemCodeTableViewCell.swift */; };
 		06B76330259372EA0002B624 /* IndicatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7632F259372EA0002B624 /* IndicatorCell.swift */; };
 		06D33B0D257E050C0093FDED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D33B0C257E050C0093FDED /* AppDelegate.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		069E3E3925A5D5E30088D690 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		069E3E3C25A5DF940088D690 /* SeletableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeletableButton.swift; sourceTree = "<group>"; };
+		069E3E3F25A5DFFD0088D690 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		06B7632025935D270002B624 /* GameItemCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameItemCodeTableViewCell.swift; sourceTree = "<group>"; };
 		06B7632F259372EA0002B624 /* IndicatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCell.swift; sourceTree = "<group>"; };
 		06D33B09257E050C0093FDED /* iOSCarePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCarePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,7 @@
 				06F37FF5258A1F6800E8F999 /* GameListViewController.swift */,
 				06B7632725935DA90002B624 /* Model */,
 				06B7632425935D950002B624 /* Cell */,
+				069E3E3C25A5DF940088D690 /* SeletableButton.swift */,
 			);
 			path = GameList;
 			sourceTree = "<group>";
@@ -119,7 +126,9 @@
 				06D33B0E257E050C0093FDED /* SceneDelegate.swift */,
 				06D33B10257E050C0093FDED /* ViewController.swift */,
 				06D33B12257E050C0093FDED /* Main.storyboard */,
+				069E3E3925A5D5E30088D690 /* Navigation.storyboard */,
 				06D33B15257E05100093FDED /* Assets.xcassets */,
+				069E3E3F25A5DFFD0088D690 /* Colors.xcassets */,
 				06D33B17257E05100093FDED /* LaunchScreen.storyboard */,
 				06D33B1A257E05100093FDED /* Info.plist */,
 				06B7632325935D650002B624 /* GameList */,
@@ -201,6 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069E3E4025A5DFFD0088D690 /* Colors.xcassets in Resources */,
+				069E3E3A25A5D5E30088D690 /* Navigation.storyboard in Resources */,
 				06D33B19257E05100093FDED /* LaunchScreen.storyboard in Resources */,
 				06D33B16257E05100093FDED /* Assets.xcassets in Resources */,
 				06D33B14257E050C0093FDED /* Main.storyboard in Resources */,
@@ -279,6 +290,7 @@
 				06B7632125935D270002B624 /* GameItemCodeTableViewCell.swift in Sources */,
 				06F37FF6258A1F6800E8F999 /* GameListViewController.swift in Sources */,
 				06F38003258A2E9C00E8F999 /* NewGameResponse.swift in Sources */,
+				069E3E3D25A5DF940088D690 /* SeletableButton.swift in Sources */,
 				06D33B11257E050C0093FDED /* ViewController.swift in Sources */,
 				06D33B0D257E050C0093FDED /* AppDelegate.swift in Sources */,
 				06D33B0F257E050C0093FDED /* SceneDelegate.swift in Sources */,

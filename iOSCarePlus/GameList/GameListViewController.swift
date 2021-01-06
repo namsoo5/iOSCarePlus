@@ -10,6 +10,9 @@ import UIKit
 
 class GameListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var newButton: SeletableButton!
+    @IBOutlet private weak var saleButton: SeletableButton!
+    @IBOutlet weak var selectedLineCenterXContraint: NSLayoutConstraint!
     private var getNewGameListURL: String {
             "https://ec.nintendo.com/api/KR/ko/search/new?count=\(newCount)&offset=\(newOffset)"
     }
@@ -28,6 +31,26 @@ class GameListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         newGameListAPICall()
+    }
+    
+    @IBAction private func newButtonTouchUp(_ sender: Any) {
+        newButton.isSelected = true
+        saleButton.isSelected = false
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.selectedLineCenterXContraint.constant = 0
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction private func saleButtonTouchUp(_ sender: Any) {
+        newButton.isSelected = false
+        saleButton.isSelected = true
+        
+        let constant: CGFloat = saleButton.center.x - newButton.center.x
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.selectedLineCenterXContraint.constant = constant
+            self?.view.layoutIfNeeded()
+        }
     }
     
     private func newGameListAPICall() {

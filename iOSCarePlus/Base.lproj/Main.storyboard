@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,7 +83,7 @@ Store</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="FbI-EV-Fjg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="483"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="439"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUg-b9-3kg">
@@ -104,23 +105,39 @@ Store</string>
                                                 <constraint firstAttribute="height" constant="157" id="j7K-a8-GPI"/>
                                             </constraints>
                                         </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-BO-qGd">
-                                            <rect key="frame" x="20" y="368" width="53" height="95"/>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-BO-qGd" customClass="SeletableButton" customModule="iOSCarePlus" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="368" width="53" height="51"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <state key="normal" title="New">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="newButtonTouchUp:" destination="3sF-LM-jlh" eventType="touchUpInside" id="j2K-h9-iK9"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSe-cf-YaG">
-                                            <rect key="frame" x="89" y="394.5" width="51" height="42"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSe-cf-YaG" customClass="SeletableButton" customModule="iOSCarePlus" customModuleProvider="target">
+                                            <rect key="frame" x="89" y="372.5" width="51" height="42"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <state key="normal" title="Sale">
                                                 <color key="titleColor" systemColor="labelColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="saleButtonTouchUp:" destination="3sF-LM-jlh" eventType="touchUpInside" id="7jA-2e-vU3"/>
+                                            </connections>
                                         </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv4-rW-njk">
+                                            <rect key="frame" x="16.5" y="423" width="60" height="2"/>
+                                            <color key="backgroundColor" name="black"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="ckr-Nj-d5w"/>
+                                                <constraint firstAttribute="height" constant="2" id="cqJ-4p-wrd"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
+                                        <constraint firstItem="Qv4-rW-njk" firstAttribute="top" secondItem="gUb-BO-qGd" secondAttribute="bottom" constant="4" id="8hG-sh-b7n"/>
+                                        <constraint firstItem="Qv4-rW-njk" firstAttribute="centerX" secondItem="gUb-BO-qGd" secondAttribute="centerX" id="9Wp-qp-XHF"/>
                                         <constraint firstItem="gUb-BO-qGd" firstAttribute="leading" secondItem="gUg-b9-3kg" secondAttribute="leading" id="B0I-0m-EJi"/>
                                         <constraint firstItem="TSe-cf-YaG" firstAttribute="leading" secondItem="gUb-BO-qGd" secondAttribute="trailing" constant="16" id="BYC-LZ-BEw"/>
                                         <constraint firstItem="tkO-Eb-8Ec" firstAttribute="trailing" secondItem="gUg-b9-3kg" secondAttribute="trailing" id="KID-AW-C3J"/>
@@ -139,7 +156,7 @@ Store</string>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameItemTableViewCell" id="yUI-F8-nfI" customClass="GameItemTableViewCell" customModule="iOSCarePlus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="511" width="414" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="467" width="414" height="89.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yUI-F8-nfI" id="p2y-jL-Sh6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
@@ -195,7 +212,7 @@ Store</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IndicatorCell" rowHeight="68" id="Mvy-8g-zr9" customClass="IndicatorCell" customModule="iOSCarePlus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="600.5" width="414" height="68"/>
+                                        <rect key="frame" x="0.0" y="556.5" width="414" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mvy-8g-zr9" id="t3z-uT-r3r">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
@@ -234,6 +251,9 @@ Store</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" image="gameIcon" id="m2M-ap-g5q"/>
                     <connections>
+                        <outlet property="newButton" destination="gUb-BO-qGd" id="Adt-ff-HhV"/>
+                        <outlet property="saleButton" destination="TSe-cf-YaG" id="ZyK-y5-c7B"/>
+                        <outlet property="selectedLineCenterXContraint" destination="9Wp-qp-XHF" id="Xgm-vs-Ufu"/>
                         <outlet property="tableView" destination="F47-GX-w0f" id="8je-Xl-iAg"/>
                     </connections>
                 </viewController>
@@ -287,11 +307,22 @@ Store</string>
                         <segue destination="3sF-LM-jlh" kind="relationship" relationship="viewControllers" id="vLl-eu-J1f"/>
                         <segue destination="pEm-q2-Thx" kind="relationship" relationship="viewControllers" id="I2s-nb-Rhd"/>
                         <segue destination="JoH-01-2gp" kind="relationship" relationship="viewControllers" id="eMi-ok-M4u"/>
+                        <segue destination="Kd3-RW-PoQ" kind="relationship" relationship="viewControllers" id="UzL-Of-ZDT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvK-ZO-M8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="707" y="-275"/>
+        </scene>
+        <!--Navigation-->
+        <scene sceneID="Wdj-7Y-tUi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Navigation" id="Kd3-RW-PoQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4C9-E2-UvU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Yg-Fy-Zmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1413" y="-147"/>
         </scene>
     </scenes>
     <resources>
@@ -300,6 +331,9 @@ Store</string>
         <image name="homeBackground" width="2071" height="812"/>
         <image name="homeIcon" width="55" height="55"/>
         <image name="shopIcon" width="55" height="55"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
