@@ -12,10 +12,14 @@ class GameListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var newButton: SeletableButton!
     @IBOutlet private weak var saleButton: SeletableButton!
-    @IBOutlet weak var selectedLineCenterXContraint: NSLayoutConstraint!
+    @IBOutlet private weak var selectedLineCenterXContraint: NSLayoutConstraint!
     private var getNewGameListURL: String {
             "https://ec.nintendo.com/api/KR/ko/search/new?count=\(newCount)&offset=\(newOffset)"
     }
+    private var getSaleGameListURL: String {
+            "https://ec.nintendo.com/api/KR/ko/search/sales?count=\(newCount)&offset=\(newOffset)"
+    }
+    private lazy var curURL: String = getNewGameListURL
     private var newCount: Int = 10
     private var newOffset: Int = 0
     var model: NewGameResponse? {
@@ -24,9 +28,6 @@ class GameListViewController: UIViewController {
         }
     }
     private var isEnd: Bool = false
-//    private var isEnd: Bool {
-//        model?.contents.count == model?.total
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,9 @@ class GameListViewController: UIViewController {
     @IBAction private func newButtonTouchUp(_ sender: Any) {
         newButton.isSelected = true
         saleButton.isSelected = false
+        newOffset = 0
+        model?.contents.removeAll()
+        curURL = getNewGameListURL
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.selectedLineCenterXContraint.constant = 0
             self?.view.layoutIfNeeded()
@@ -45,7 +49,9 @@ class GameListViewController: UIViewController {
     @IBAction private func saleButtonTouchUp(_ sender: Any) {
         newButton.isSelected = false
         saleButton.isSelected = true
-        
+        newOffset = 0
+        model?.contents.removeAll()
+        curURL = getSaleGameListURL
         let constant: CGFloat = saleButton.center.x - newButton.center.x
         UIView.animate(withDuration: 0.2) { [weak self] in
             self?.selectedLineCenterXContraint.constant = constant
@@ -54,7 +60,7 @@ class GameListViewController: UIViewController {
     }
     
     private func newGameListAPICall() {
-        AF.request(getNewGameListURL).responseJSON { [weak self] response in
+        AF.request(curURL).responseJSON { [weak self] response in
             guard let data = response.data else { return }
             
             let decoder: JSONDecoder = JSONDecoder()
